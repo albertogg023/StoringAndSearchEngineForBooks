@@ -4,9 +4,9 @@ using namespace std;
 
 
 Libro::Libro(){
-	this->isbn = -1;
-	this->ano = -1;
-	this->num_capitulos = -1;
+	this->isbn = 0;
+	this->ano = 0;
+	this->num_capitulos = 0;
 	this->titulo = "Sin asignar";
 	this->autores = "Sin asignar";
 }
