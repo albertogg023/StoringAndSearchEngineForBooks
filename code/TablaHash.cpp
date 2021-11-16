@@ -10,6 +10,10 @@ TablaHash::TablaHash(){
 }
 
 TablaHash::~TablaHash(){
+	for(int i = 0; i < this->num_cubetas; ++i){
+		if(this->tablaHash[i] != NULL)
+			delete this->tablaHash[i];
+	}
 	delete[] this->tablaHash;
 }
 
@@ -88,10 +92,10 @@ void TablaHash::secuenciaDeInsercion(unsigned long long int isbn, unsigned int i
 
 void TablaHash::reestructurar(){	// método privado
 	int n_num_cubetas_original = this->num_cubetas;
-	this->num_cubetas = 2*n_num_cubetas_original;
+	this->num_cubetas = 0;
 
 	Libro ** original = this->tablaHash;
-	this->tablaHash = new Libro*[this->num_cubetas];
+	this->tablaHash = new Libro*[n_num_cubetas_origina*2];
 	Libro * elem;
 	unsigned int indice_insertar;
 	for(int i = 0; i < n_num_cubetas_original; ++i){
