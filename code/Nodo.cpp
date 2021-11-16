@@ -12,6 +12,9 @@ Nodo::Nodo(){
 }
 
 Nodo::~Nodo(){
+	for(int i = 0; i < TAMANO_ARRAY; ++i)
+		if(this->hijos[i] == NULL)	// inicializamos a null los punteros
+			delete this->hijos[i];
 	delete[] this->hijos;
 	delete this->apariciones;
 }
